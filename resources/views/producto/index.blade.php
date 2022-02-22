@@ -21,7 +21,7 @@
                     <div class="col-sm-3"><!--card / border-info-->
                         <div class="text-center">
                             <div class="card-body">
-                                <p><a href="#">{{ $dataItem->id }}</a></p>
+                                <p><a href="{{ route('producto.show', $dataItem->id) }}">{{ $dataItem->id }}</a></p>
                                 <h5 class="card-title">{{ $dataItem->nombre }}</h5>
                                 <p>{{ $dataItem->description }}</p>
                             </div>
