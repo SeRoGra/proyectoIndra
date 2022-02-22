@@ -9,7 +9,7 @@
       <li class="nav-item {{ setActive('home.index') }}">
         <a class="nav-link" href="{{ @route("home.index") }}">Home</a>
       </li>
-      <li class="nav-item {{ setActive('producto.index') }}">
+      <li class="nav-item {{ setActive('producto.*') }}">
         <a class="nav-link" href="{{ @route("producto.index") }}">Productos</a>
       </li>
       <li class="nav-item">

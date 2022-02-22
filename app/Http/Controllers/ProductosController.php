@@ -59,7 +59,8 @@ class ProductosController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = ProductModel::findOrFail($id);
+        return view('producto.show', compact('data'));
     }
 
     /**
@@ -70,7 +71,8 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = ProductModel::findOrFail($id);
+        return view('producto.edit', compact('data'));
     }
 
     /**
@@ -80,9 +82,14 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
-        //
+        $data = ProductModel::find(request()->id);
+        $data->nombre = request()->nombre;
+        $data->description = request()->description;
+        $data->save();
+        return redirect()->route('producto.show', request()->id);
+
     }
 
     /**
