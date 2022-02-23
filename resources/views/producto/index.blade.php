@@ -4,7 +4,7 @@
 
 @section('content')
     <ul>
-        <li><a href="#">Crear Producto</a></li>
+        <li><a href="{{ route('producto.create') }}">Crear Producto</a></li>
     </ul>
     <center>
         <div class="container">

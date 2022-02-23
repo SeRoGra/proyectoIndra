@@ -34,7 +34,7 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        //
+        return view('producto.create');
     }
 
     /**
@@ -43,12 +43,19 @@ class ProductosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(String $title, String $description)
+    public function store()
     {
-        ProductModel::create([
-            'nombre' => $title,
-            'description' => $description
+        request()->validate([
+            'nombre' => 'required',
+            'description' => 'required'
         ]);
+
+        ProductModel::create([
+            'nombre' => request()->nombre,
+            'description' => request()->description
+        ]);
+
+        return redirect()->route('producto.index');
     }
 
     /**
@@ -84,6 +91,12 @@ class ProductosController extends Controller
      */
     public function update()
     {
+
+        request()->validate([
+            'nombre' => 'required',
+            'description' => 'required'
+        ]);
+
         $data = ProductModel::find(request()->id);
         $data->nombre = request()->nombre;
         $data->description = request()->description;
@@ -98,8 +111,10 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        $data = ProductModel::find(request()->id);
+        $data->delete();
+        return redirect()->route('producto.index');
     }
 }
