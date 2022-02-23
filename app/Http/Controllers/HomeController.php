@@ -26,7 +26,7 @@ class HomeController extends Controller
         $producto = $this->producto->all();
 
         for ($i=0; $i <count($producto) ; $i++) {
-            ProductosController::store($producto[$i]->title, $producto[$i]->description);
+            HomeController::store($producto[$i]->title, $producto[$i]->description);
         }
 
         return redirect()->route('producto.index', ['cargaProduct' => 1]);
