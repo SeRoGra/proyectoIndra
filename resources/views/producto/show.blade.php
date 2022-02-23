@@ -11,7 +11,7 @@
     <div class="container">
         <div class="text-center">
             <div class="card-body">
-                <p>{{ $data->id }}</a></p>
+                <p>{{ $data->id }}</p>
                 <h5 class="card-title">{{ $data->nombre }}</h5>
                 <p>{{ $data->description }}</p>
             </div>

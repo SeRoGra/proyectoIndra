@@ -12,11 +12,6 @@ class Producto extends HttpRequestClass
 	{
 		return $this->get('products');
 	}
-
-	/*public function find($id)
-	{
-		return $this->get('posts'.'/'.$id);
-	}*/
 }
 
 ?>
