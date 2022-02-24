@@ -113,11 +113,8 @@ class ProductosController extends Controller
      */
     public function destroy()
     {
-
-        return request();
-
-        /*$data = ProductModel::find(request()->id);
+        $data = ProductModel::find(request()->id);
         $data->delete();
-        return redirect()->route('producto.index');*/
+        return redirect()->route('producto.index');
     }
 }
