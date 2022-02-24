@@ -29,4 +29,7 @@
         <button type="submit" class="btn btn-light">Eliminar</button>
     </form>
 </center>
+<ul>
+    <li><a href="{{ route('asociados.index', $data->id) }}">Asociar producto</a></li>
+</ul>
 @endsection
