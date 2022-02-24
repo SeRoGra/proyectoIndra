@@ -13,7 +13,7 @@
         <a class="nav-link" href="{{ @route("producto.index") }}">Productos</a>
       </li>
       <li class="nav-item {{ setActive('usuario.*') }}">
-        <a class="nav-link" href="{{ @route("usuario.index") }}">Clientes</a>
+        <a class="nav-link" href="{{ @route("usuario.index") }}">Usuarios</a>
       </li>
     </ul>
   </div>
