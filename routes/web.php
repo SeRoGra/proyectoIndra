@@ -34,3 +34,7 @@ Route::get('/usuarios/{id}', 'App\Http\Controllers\UserController@show')->name('
 Route::get('/usuarios/modificar/{id}', 'App\Http\Controllers\UserController@edit')->name('usuario.edit');
 Route::patch('/usuarios/modificar', 'App\Http\Controllers\UserController@update')->name('usuario.update');
 Route::delete('/usuarios/eliminar', 'App\Http\Controllers\UserController@destroy')->name('usuario.destroy');
+
+Route::get('/productos/asociados/{user_id}', 'App\Http\Controllers\UserProductController@index')->name('asociados.index');
+Route::post('/productos/asociados', 'App\Http\Controllers\UserProductController@store')->name('asociados.store');
+Route::delete('/productos/asociados/eliminar', 'App\Http\Controllers\UserProductController@destroy')->name('asociados.destroy');
